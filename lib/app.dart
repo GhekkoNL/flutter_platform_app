@@ -76,7 +76,7 @@ class AppStarterState extends State<AppStarter> {
             systemNavigationBarIconBrightness: Brightness.dark,
           ));
           return MaterialApp(
-              title: 'Ghekko App',
+              title: widget.title,
               debugShowCheckedModeBanner: false,
               themeMode: themeMode,
               theme: lightTheme,
@@ -127,7 +127,26 @@ class AppStarterState extends State<AppStarter> {
 
         /// Linux
       } else if (Platform.isLinux) {
-        return const LinuxApp();
+       return ResponsiveSizer(builder: (context, orientation, screenType) {
+         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+           statusBarColor: Colors.transparent,
+           statusBarIconBrightness: Brightness.dark,
+           statusBarBrightness: !kIsWeb && Platform.isAndroid
+               ? Brightness.dark
+               : Brightness.light,
+           systemNavigationBarColor: Colors.white,
+           systemNavigationBarDividerColor: Colors.transparent,
+           systemNavigationBarIconBrightness: Brightness.dark,
+         ));
+         return MaterialApp(
+             title: widget.title,
+             debugShowCheckedModeBanner: false,
+             themeMode: themeMode,
+             theme: lightTheme,
+             darkTheme: darkTheme,
+             locale: Get.deviceLocale,
+             home: LinuxApp(title: widget.title));
+       });
 
         /// Windows
       } else if (Platform.isWindows) {

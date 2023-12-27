@@ -30,7 +30,7 @@ class AppScreen1 extends StatelessWidget {
 
         /// isLinux
       } else if (Platform.isLinux) {
-        return const SizedBox();
+        return const AndroidContent();
 
         /// isWindows
       } else if (Platform.isWindows) {
