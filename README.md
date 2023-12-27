@@ -7,7 +7,7 @@ A Flutter project by Ghekko dev.
 - Flutter Version: 3.16.5
 - Dart Version: 3.2.3
 - Gradle Version: 7.4.2.
-- Kotlin Version: 1.8.20
+- Kotlin Version: 1.9.20
 - Android Studio Hedgehog | 2023.1.1
 - Apple Xcode 15
 - CocoaPods 1.14.3
