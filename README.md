@@ -5,7 +5,7 @@ A Flutter project by Ghekko dev.
 # Software Information
 
 - Flutter Version: 3.16.5
-- Dart Version: 3.2.0
+- Dart Version: 3.2.3
 - Gradle Version: 7.4.2.
 - Kotlin Version: 1.8.20
 - Android Studio Hedgehog | 2023.1.1
