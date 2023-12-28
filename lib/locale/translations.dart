@@ -4,7 +4,7 @@ class Languages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
     'nl_NL': {
-      "appName" : "Ghekko App",
+      "appName" : "Platform App",
 
       "Main Navigation": " - - - App - - - ",
       "menuScreen1": "Home",
@@ -30,7 +30,7 @@ class Languages extends Translations {
       "adjustAllPlatforms": "Adjust all Platforms in One Single File.",
     },
     'en_GB': {
-      "appName" : "Ghekko App",
+      "appName" : "Platform App",
 
       "Main Navigation": " - - - App - - - ",
       "menuScreen1": "Home",

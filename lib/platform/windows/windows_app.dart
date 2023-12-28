@@ -15,8 +15,8 @@ class WindowsApp extends StatelessWidget {
     return FluentApp(
       debugShowCheckedModeBanner: false,
       home: NavigationView(
-        appBar: const NavigationAppBar(
-          title: Text('Bodyland Men\'s BodyCare'),
+        appBar: NavigationAppBar(
+          title: Text('appName'.tr),
         ),
         pane: NavigationPane(displayMode: PaneDisplayMode.auto, items: [
           PaneItem(
