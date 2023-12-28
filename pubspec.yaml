@@ -6,7 +6,7 @@ version: 1.0.0
 
 # Windows Config
 msix_config:
-  display_name: Ghekko App
+  display_name: Platform App
   publisher_display_name: Ghekko Dev.
   identity_name: ghekko.platform.app
   msix_version: 1.0.0.0
