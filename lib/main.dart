@@ -36,7 +36,8 @@ Future<void> main() async {
       });
     }
   }
-  if (Platform.isWindows) { // only apply Aero theming on Windows.
+  if (Platform.isWindows) {
+    WidgetsFlutterBinding.ensureInitialized();
     await Window.initialize();
     await Window.setEffect(
       effect: WindowEffect.aero,

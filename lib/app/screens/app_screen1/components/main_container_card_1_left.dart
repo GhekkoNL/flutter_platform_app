@@ -12,7 +12,7 @@ class ContainerOneLeft extends StatelessWidget {
       padding: const EdgeInsets.all(Insets.small),
       child: LayoutBuilder(builder: (context, constraints) {
         /// Android & Web
-        if (kIsWeb || Platform.isAndroid) {
+        if (kIsWeb || Platform.isAndroid || Platform.isWindows) {
           return const Center(
               child: Text(
                   'Android / Web Screen 1'));
@@ -31,10 +31,6 @@ class ContainerOneLeft extends StatelessWidget {
 
           /// Linux
         } else if (Platform.isLinux) {
-          return const SizedBox();
-
-          /// Windows
-        } else if (Platform.isWindows) {
           return const SizedBox();
 
           /// Fuchsia or else

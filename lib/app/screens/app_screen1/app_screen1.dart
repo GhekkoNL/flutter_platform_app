@@ -34,7 +34,7 @@ class AppScreen1 extends StatelessWidget {
 
         /// isWindows
       } else if (Platform.isWindows) {
-        return const SizedBox();
+        return const AndroidContent();
 
         /// Fuchsia or Else
       } else {
