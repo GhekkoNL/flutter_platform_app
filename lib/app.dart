@@ -145,7 +145,10 @@ class AppStarterState extends State<AppStarter> {
              theme: lightTheme,
              darkTheme: darkTheme,
              locale: Get.deviceLocale,
-             home: LinuxApp(title: widget.title));
+             home: AndroidApp(
+                 title: widget.title,
+                 useLightMode: useLightMode,
+                 handleBrightnessChange: handleBrightnessChange));
        });
 
         /// Windows
