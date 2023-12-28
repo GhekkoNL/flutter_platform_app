@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:app/theme/widget_styling/design_elements.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_acrylic/window.dart';
+import 'package:flutter_acrylic/window_effect.dart';
 import 'package:get/get.dart';
 import 'app.dart';
 import 'locale/translations.dart';
@@ -34,6 +36,13 @@ Future<void> main() async {
         await windowManager.focus();
       });
     }
+  }
+  if (Platform.isWindows) { // only apply Aero theming on Windows.
+    await Window.initialize();
+    await Window.setEffect(
+      effect: WindowEffect.aero,
+      color: Colors.black.withOpacity(0.6),
+    );
   }
 
   WidgetsFlutterBinding.ensureInitialized();
