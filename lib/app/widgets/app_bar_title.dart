@@ -37,16 +37,18 @@ class AppBarTitle extends StatelessWidget {
         /// Linux
       } else if (Platform.isLinux) {
         return Text('appName'.tr,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Electric Toaster',
+              color: Theme.of(context).canvasColor,
               fontWeight: FontWeight.w400,
               fontSize: 13,
             ));
         /// Windows
       } else if (Platform.isWindows) {
         return Text('appName'.tr,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Electric Toaster',
+              color: Theme.of(context).canvasColor,
               fontWeight: FontWeight.w400,
               fontSize: 13,
             ));

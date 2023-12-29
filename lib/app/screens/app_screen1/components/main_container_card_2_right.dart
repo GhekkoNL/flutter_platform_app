@@ -14,8 +14,8 @@ class ContainerOneRight extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Insets.small),
       child: LayoutBuilder(builder: (context, constraints) {
-        /// Android & Web
-        if (kIsWeb || Platform.isAndroid || Platform.isWindows) {
+        /// Android - Web - Linux - Windows
+        if (kIsWeb || Platform.isAndroid || Platform.isLinux || Platform.isWindows) {
           return Center(
               child: Text('adjustAllPlatforms'.tr,
                   style: Theme.of(context).textTheme.bodyLarge,
@@ -34,10 +34,6 @@ class ContainerOneRight extends StatelessWidget {
               child: Text('adjustAllPlatforms'.tr,
                   style: MacosTheme.of(context).typography.body,
                   textAlign: TextAlign.center));
-
-          /// Linux
-        } else if (Platform.isLinux) {
-          return const SizedBox();
 
           /// Fuchsia or else
         } else {
