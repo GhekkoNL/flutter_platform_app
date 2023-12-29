@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:app/theme/widget_styling/design_elements.dart';
+import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_acrylic/window.dart';
@@ -12,6 +13,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:window_manager/window_manager.dart';
+bool get isDesktop {
+  if (kIsWeb) return false;
+  return [
+    TargetPlatform.windows,
+    //TargetPlatform.linux,
+    //TargetPlatform.macOS,
+  ].contains(defaultTargetPlatform);
+}
 
 Future<void> _configureMacosWindowUtils() async {
   const config = MacosWindowUtilsConfig();
@@ -38,11 +47,21 @@ Future<void> main() async {
   }
   if (Platform.isWindows) {
     WidgetsFlutterBinding.ensureInitialized();
-    await Window.initialize();
-    await Window.setEffect(
-      effect: WindowEffect.aero,
-      color: Colors.black.withOpacity(0.6),
-    );
+    await flutter_acrylic.Window.initialize();
+    if (defaultTargetPlatform == TargetPlatform.windows) {
+      await flutter_acrylic.Window.hideWindowControls();
+    }
+    await WindowManager.instance.ensureInitialized();
+    windowManager.waitUntilReadyToShow().then((_) async {
+      await windowManager.setTitleBarStyle(
+        TitleBarStyle.hidden,
+        windowButtonVisibility: false,
+      );
+      await windowManager.setMinimumSize(const Size(500, 600));
+      await windowManager.show();
+      await windowManager.setPreventClose(false);
+      await windowManager.setSkipTaskbar(false);
+    });
   }
 
   WidgetsFlutterBinding.ensureInitialized();

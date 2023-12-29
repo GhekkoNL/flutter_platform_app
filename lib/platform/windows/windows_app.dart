@@ -1,46 +1,61 @@
-import 'package:fluent_ui/fluent_ui.dart';
-import 'package:get/get.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:fluent_ui/fluent_ui.dart' hide Page;
+import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
+import 'package:provider/provider.dart';
+import '../../theme/windows_theme.dart';
+import 'components/destinations.dart';
 
-import '../../app/screens/app_screen1/app_screen1.dart';
-import '../../app/screens/app_screen2/app_screen2.dart';
-import '../../app/screens/app_screen3/app_screen3.dart';
-import '../../app/screens/app_screen4/app_screen4.dart';
+final _appTheme = AppTheme();
 
 class WindowsApp extends StatelessWidget {
-  const WindowsApp({super.key});
+  const WindowsApp({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return FluentApp(
-      debugShowCheckedModeBanner: false,
-      home: NavigationView(
-        appBar: NavigationAppBar(
-          title: Text('appName'.tr),
-        ),
-        pane: NavigationPane(displayMode: PaneDisplayMode.auto, items: [
-          PaneItem(
-            icon: const Icon(LineIcons.home, size: 22),
-            title: Text('menuScreen1'.tr),
-            body: const AppScreen1(),
+    return ChangeNotifierProvider.value(
+      value: _appTheme,
+      builder: (context, child) {
+        final appTheme = context.watch<AppTheme>();
+        return FluentApp.router(
+          title: 'Platform App',
+          themeMode: appTheme.mode,
+          debugShowCheckedModeBanner: false,
+          color: appTheme.color,
+          darkTheme: FluentThemeData(
+            brightness: Brightness.dark,
+            accentColor: appTheme.color,
+            visualDensity: VisualDensity.standard,
+            focusTheme: FocusThemeData(
+              glowFactor: is10footScreen(context) ? 2.0 : 0.0,
+            ),
           ),
-          PaneItem(
-            icon: const Icon(LineIcons.gem, size: 24),
-            title: Text('menuScreen2'.tr),
-            body: const AppScreen2(),
+          theme: FluentThemeData(
+            accentColor: appTheme.color,
+            visualDensity: VisualDensity.standard,
+            focusTheme: FocusThemeData(
+              glowFactor: is10footScreen(context) ? 2.0 : 0.0,
+            ),
           ),
-          PaneItem(
-            icon: const Icon(LineIcons.userFriends, size: 22),
-            title: Text('menuScreen3'.tr),
-            body: const AppScreen3(),
-          ),
-          PaneItem(
-            icon: const Icon(LineIcons.stream, size: 22),
-            title: Text('menuScreen4'.tr),
-            body: const AppScreen4(),
-          )
-        ]),
-      ),
+          locale: appTheme.locale,
+          builder: (context, child) {
+            return Directionality(
+              textDirection: appTheme.textDirection,
+              child: NavigationPaneTheme(
+                data: NavigationPaneThemeData(
+                  backgroundColor: appTheme.windowEffect !=
+                      flutter_acrylic.WindowEffect.disabled
+                      ? Colors.transparent
+                      : null,
+                ),
+                child: child!,
+              ),
+            );
+          },
+          routeInformationParser: router.routeInformationParser,
+          routerDelegate: router.routerDelegate,
+          routeInformationProvider: router.routeInformationProvider,
+        );
+      },
     );
   }
 }

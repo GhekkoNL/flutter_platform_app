@@ -16,7 +16,7 @@ class AppScreen4State extends State<AppScreen4> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
+      if (kIsWeb || Platform.isAndroid || Platform.isIOS || Platform.isWindows) {
         return SafeArea(
             child: Scaffold(
                 body: SingleChildScrollView(
@@ -237,10 +237,6 @@ class AppScreen4State extends State<AppScreen4> {
 
         /// Linux
       } else if (Platform.isLinux) {
-        return const SizedBox();
-
-        /// Windows
-      } else if (Platform.isWindows) {
         return const SizedBox();
 
         /// Fuchsia or Else

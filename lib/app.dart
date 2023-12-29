@@ -153,18 +153,7 @@ class AppStarterState extends State<AppStarter> {
 
         /// Windows
       } else if (Platform.isWindows) {
-        return ResponsiveSizer(builder: (context, orientation, screenType) {
-          SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: !kIsWeb && Platform.isAndroid
-                ? Brightness.dark
-                : Brightness.light,
-            systemNavigationBarColor: Colors.white,
-            systemNavigationBarDividerColor: Colors.transparent,
-            systemNavigationBarIconBrightness: Brightness.dark,
-          ));
-          return const WindowsApp();});
+        return WindowsApp(title: widget.title);
 
 
         /// Fuchsia or else
