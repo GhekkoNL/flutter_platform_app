@@ -102,7 +102,7 @@ class RunSplashState extends State<RunSplash>
             () => Navigator.pushReplacement(
             context,
             CupertinoPageRoute(
-                builder: (context) => const AppStarter(title: 'Ghekko App'))));
+                builder: (context) => const AppStarter(title: 'Platform App'))));
   }
 
   @override
@@ -144,7 +144,7 @@ class RunSplashState extends State<RunSplash>
                 padding: const EdgeInsets.all(Insets.large),
                 color: Colors.white,
                 child: Image.asset(
-                  'assets/images/home/10-jaar-jubileum.jpg',
+                  'assets/images/home/platform-app-logo.png',
                   width: animation.value * 400,
                   height: animation.value * 400,
                 ),

@@ -67,12 +67,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/images/home/
-    - assets/images/hammam/
-    - assets/images/laseren/
-    - assets/images/massage/
-    - assets/images/ontharen/
-    - assets/images/schoonheid/
-    - assets/images/tanden/
+
   fonts:
     - family: Electric Toaster
       fonts:
