@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:app/theme/widget_styling/design_elements.dart';
-import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_acrylic/window.dart';
@@ -13,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:app/theme/widget_styling/design_elements.dart';
 
 Future<void> _configureMacosWindowUtils() async {
   const config = MacosWindowUtilsConfig();
@@ -37,6 +36,7 @@ Future<void> main() async {
       });
     }
   }
+
   if (Platform.isWindows) {
     WidgetsFlutterBinding.ensureInitialized();
     await Window.initialize();
@@ -63,7 +63,7 @@ Future<void> main() async {
       translations: Languages(),
       locale: const Locale('nl', 'NL'),
       fallbackLocale: const Locale('en', 'GB'),
-      home: const AppStarter(title: 'Ghekko App',)));
+      home: const AppStarter(title: 'Platform App',)));
 }
 
 

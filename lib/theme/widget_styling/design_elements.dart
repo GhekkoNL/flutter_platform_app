@@ -156,8 +156,8 @@ const rowDivider = SizedBox(width: 12);
 const colDivider = SizedBox(height: 6);
 
 const double narrowScreenWidthThreshold = 550;
-const double mediumWidthBreakpoint = 850;
-const double largeWidthBreakpoint = 1300;
+const double mediumWidthBreakpoint = 750;
+const double largeWidthBreakpoint = 1100;
 
 const double transitionLength = 500;
 

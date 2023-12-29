@@ -60,8 +60,8 @@ class AppStarterState extends State<AppStarter> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      /// Android & Web
-      if (kIsWeb || Platform.isAndroid) {
+      /// Android - Web - Linux - Windows
+      if (kIsWeb || Platform.isAndroid || Platform.isLinux || Platform.isWindows) {
         return ResponsiveSizer(builder: (context, orientation, screenType) {
           SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
@@ -122,38 +122,6 @@ class AppStarterState extends State<AppStarter> {
                 locale: Get.deviceLocale,
                 home: MacApp(title: widget.title));
             });
-
-        /// Linux
-      } else if (Platform.isLinux) {
-       return ResponsiveSizer(builder: (context, orientation, screenType) {
-         return MaterialApp(
-             title: widget.title,
-             debugShowCheckedModeBanner: false,
-             themeMode: themeMode,
-             theme: lightTheme,
-             darkTheme: darkTheme,
-             locale: Get.deviceLocale,
-             home: AndroidApp(
-                 title: widget.title,
-                 useLightMode: useLightMode,
-                 handleBrightnessChange: handleBrightnessChange));
-       });
-
-        /// Windows
-      } else if (Platform.isWindows) {
-        return ResponsiveSizer(builder: (context, orientation, screenType) {
-          return MaterialApp(
-              title: widget.title,
-              debugShowCheckedModeBanner: false,
-              themeMode: themeMode,
-              theme: lightTheme,
-              darkTheme: darkTheme,
-              locale: Get.deviceLocale,
-              home: AndroidApp(
-              title: widget.title,
-              useLightMode: useLightMode,
-              handleBrightnessChange: handleBrightnessChange));
-        });
 
         /// Fuchsia or else
       } else {

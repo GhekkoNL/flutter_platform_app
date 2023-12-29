@@ -14,7 +14,7 @@ class ContainerOneLeft extends StatelessWidget {
         /// Android - Web - Linux - Windows
         if (kIsWeb || Platform.isAndroid || Platform.isLinux || Platform.isWindows) {
           return const Center(
-              child: Text('Android / Web Screen 1'));
+              child: Text('Main Web Screen 1'));
 
           /// IOS
         } else if (Platform.isIOS) {
