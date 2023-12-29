@@ -35,26 +35,26 @@ Future<void> main() async {
         await windowManager.focus();
       });
     }
-  }
 
-  if (Platform.isWindows) {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Window.initialize();
-    await Window.setEffect(
-      effect: WindowEffect.aero,
-      color: Colors.transparent,
-    );
-    await windowManager.ensureInitialized();
-    WindowOptions windowOptions = const WindowOptions(
-      size: Size(1280, 860),
-      center: true,
-      backgroundColor: Colors.transparent,
-      skipTaskbar: false,
-    );
-    windowManager.waitUntilReadyToShow(windowOptions, () async {
-      await windowManager.show();
-      await windowManager.focus();
-    });
+    if (Platform.isWindows) {
+      WidgetsFlutterBinding.ensureInitialized();
+      await Window.initialize();
+      await Window.setEffect(
+        effect: WindowEffect.aero,
+        color: Colors.transparent,
+      );
+      await windowManager.ensureInitialized();
+      WindowOptions windowOptions = const WindowOptions(
+        size: Size(1280, 860),
+        center: true,
+        backgroundColor: Colors.transparent,
+        skipTaskbar: false,
+      );
+      windowManager.waitUntilReadyToShow(windowOptions, () async {
+        await windowManager.show();
+        await windowManager.focus();
+      });
+    }
   }
 
   WidgetsFlutterBinding.ensureInitialized();
