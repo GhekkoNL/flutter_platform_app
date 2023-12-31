@@ -5,10 +5,9 @@ class Web extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Adaptive NavBar',
-      home: SizedBox(),
+    return Container(
+      alignment: Alignment.center,
+      child: const Text('Set to AndroidApp'),
     );
   }
 }
