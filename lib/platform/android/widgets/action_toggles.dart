@@ -1,9 +1,10 @@
+import 'package:app/locale/language_switch.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class BrightnessButton extends StatelessWidget {
-  const BrightnessButton({super.key,
+class ActionToggles extends StatelessWidget {
+  const ActionToggles({super.key,
     required this.handleBrightnessChange,
     this.showTooltipBelow = false,
   });
@@ -14,6 +15,7 @@ class BrightnessButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final isBright = Theme.of(context).brightness == Brightness.light;
     return Row( children: [
+      const LanguageSwitch(),
         Tooltip(
           preferBelow: showTooltipBelow,
           message: 'darkModeSwitch'.tr,
@@ -48,6 +50,14 @@ class ExpandedTrailingActions extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Row(
+            children: [
+              Text('language'.tr),
+              Expanded(child: Container()),
+              const LanguageSwitch(),
+            ],
+          ),
+          const Gap(5),
           Row(
             children: [
               Text('darkMode'.tr),
