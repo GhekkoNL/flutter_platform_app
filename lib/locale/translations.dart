@@ -23,7 +23,7 @@ class Languages extends Translations {
       "Windows": " - - - Windows Fluent - - - ",
       "navKey": "Navigatie Kijk Sleutel",
       "confirmClose": "Bevestig Sluiten",
-      "uSure": "Are you sure you want to close this windowWeet je zeker dat je deze window wilt sluiten?",
+      "uSure": "Weet je zeker dat je deze window wilt sluiten?",
 
       "languages": "Talen",
       "language": "Taal Keuze",
@@ -34,7 +34,7 @@ class Languages extends Translations {
       "yes": "Ja",
       "no": "Nee",
 
-      "adjustAllPlatforms": "Adjust all Platforms in One Single File.",
+      "adjustAllPlatforms": "Pas alle platformen tegelijk aan.",
     },
     'en_GB': {
       "appName" : "Platform App",
@@ -67,7 +67,7 @@ class Languages extends Translations {
       "yes": "Yes",
       "no": "No",
 
-      "adjustAllPlatforms": "Adjust all Platforms in One Single File.",
+      "adjustAllPlatforms": "Adjust all Platforms at once.",
     }
   };
 }
