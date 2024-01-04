@@ -14,20 +14,20 @@ class LanguageSwitch extends StatelessWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       elevation: 0,
       icon: LayoutBuilder(builder: (context, constraints) {
-        // Android & Web
-        if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
-          return Icon(Icons.g_translate,
-            color: Theme.of(context).canvasColor,);
+        // Android - Web - IOS - Linux - Windows
+        if (kIsWeb ||
+            Platform.isAndroid ||
+            Platform.isIOS ||
+            Platform.isLinux ||
+            Platform.isWindows) {
+          return Icon(
+            Icons.g_translate,
+            color: Theme.of(context).canvasColor,
+          );
           // MacOS
         } else if (Platform.isMacOS) {
           return Icon(Icons.g_translate,
               color: MacosTheme.of(context).primaryColor);
-          // Linux
-        } else if (Platform.isLinux) {
-          return const SizedBox();
-          // Windows
-        } else if (Platform.isWindows) {
-          return const SizedBox();
           // Fuchsia and or Others
         } else {
           return const SizedBox();
@@ -37,12 +37,10 @@ class LanguageSwitch extends StatelessWidget {
         return [
           PopupMenuItem(
             child: const DutchSwitch(),
-            onTap: () {
-            },
+            onTap: () {},
           ),
           PopupMenuItem(
-            onTap: () {
-            },
+            onTap: () {},
             child: const EnglishSwitch(),
           )
         ];
@@ -63,8 +61,9 @@ class DutchSwitch extends StatelessWidget {
         children: [
           Image.asset('assets/icons/nl.png', width: 20),
           const Gap(10),
-          Text('dutch'.tr, style: TextStyle(fontSize: 12,
-              color: Theme.of(context).primaryColor)),
+          Text('dutch'.tr,
+              style: TextStyle(
+                  fontSize: 12, color: Theme.of(context).primaryColor)),
         ],
       ),
       onPressed: () {
@@ -86,8 +85,9 @@ class EnglishSwitch extends StatelessWidget {
         children: [
           Image.asset('assets/icons/gb.png', width: 20),
           const Gap(10),
-          Text('english'.tr, style: TextStyle(fontSize: 12,
-              color: Theme.of(context).primaryColor)),
+          Text('english'.tr,
+              style: TextStyle(
+                  fontSize: 12, color: Theme.of(context).primaryColor)),
         ],
       ),
       onPressed: () {

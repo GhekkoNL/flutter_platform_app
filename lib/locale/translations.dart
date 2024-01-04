@@ -57,7 +57,7 @@ class Languages extends Translations {
       "yes": "Yes",
       "no": "No",
 
-      "adjustAllPlatforms": "Adjust all Platforms in One Single File.",
+      "adjustAllPlatforms": "Adjust all Platforms at once.",
     }
   };
 }
