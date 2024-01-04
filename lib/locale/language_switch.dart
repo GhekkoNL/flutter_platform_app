@@ -14,14 +14,20 @@ class LanguageSwitch extends StatelessWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       elevation: 0,
       icon: LayoutBuilder(builder: (context, constraints) {
-        // Android - Web - Linux - Windows
-        if (kIsWeb || Platform.isAndroid || Platform.isIOS || Platform.isLinux || Platform.isWindows) {
+        // Android & Web
+        if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
           return Icon(Icons.g_translate,
             color: Theme.of(context).canvasColor,);
           // MacOS
         } else if (Platform.isMacOS) {
           return Icon(Icons.g_translate,
               color: MacosTheme.of(context).primaryColor);
+          // Linux
+        } else if (Platform.isLinux) {
+          return const SizedBox();
+          // Windows
+        } else if (Platform.isWindows) {
+          return const SizedBox();
           // Fuchsia and or Others
         } else {
           return const SizedBox();

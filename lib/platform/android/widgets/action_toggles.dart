@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class BrightnessButton extends StatelessWidget {
-  const BrightnessButton({super.key,
+class ActionToggles extends StatelessWidget {
+  const ActionToggles({super.key,
     required this.handleBrightnessChange,
     this.showTooltipBelow = false,
   });
@@ -50,6 +50,14 @@ class ExpandedTrailingActions extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Row(
+            children: [
+              Text('language'.tr),
+              Expanded(child: Container()),
+              const LanguageSwitch(),
+            ],
+          ),
+          const Gap(5),
           Row(
             children: [
               Text('darkMode'.tr),

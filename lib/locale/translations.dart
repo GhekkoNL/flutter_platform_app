@@ -20,11 +20,6 @@ class Languages extends Translations {
       "window": "Window",
       "sideBarToggle": "Zijbalk Switch",
 
-      "Windows": " - - - Windows Fluent - - - ",
-      "navKey": "Navigatie Kijk Sleutel",
-      "confirmClose": "Bevestig Sluiten",
-      "uSure": "Weet je zeker dat je deze window wilt sluiten?",
-
       "languages": "Talen",
       "language": "Taal Keuze",
       "english": "English",
@@ -53,11 +48,6 @@ class Languages extends Translations {
       "window": "Window",
       "sideBarToggle": "Toggle Sidebar",
 
-      "Windows": " - - - Windows Fluent - - - ",
-      "navKey": "Navigation View Key",
-      "confirmClose": "Confirm close",
-      "uSure": "Are you sure you want to close this window?",
-
       "languages": "Languages",
       "language": "Choose Language",
       "english": "English",
@@ -67,7 +57,7 @@ class Languages extends Translations {
       "yes": "Yes",
       "no": "No",
 
-      "adjustAllPlatforms": "Adjust all Platforms at once.",
+      "adjustAllPlatforms": "Adjust all Platforms in One Single File.",
     }
   };
 }

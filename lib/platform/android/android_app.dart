@@ -142,7 +142,7 @@ class AndroidAppState extends State<AndroidApp> with SingleTickerProviderStateMi
       title: const AppBarTitle(),
       actions: !showMediumSizeLayout && !showLargeSizeLayout
           ? [
-        BrightnessButton(
+        ActionToggles(
           handleBrightnessChange: widget.handleBrightnessChange,
         ),
       ]
@@ -154,7 +154,7 @@ class AndroidAppState extends State<AndroidApp> with SingleTickerProviderStateMi
     mainAxisAlignment: MainAxisAlignment.end,
     children: [
       Flexible(
-        child: BrightnessButton(
+        child: ActionToggles(
           handleBrightnessChange: widget.handleBrightnessChange,
           showTooltipBelow: false,
         ),
