@@ -16,6 +16,7 @@ class ActionToggles extends StatelessWidget {
     final isBright = Theme.of(context).brightness == Brightness.light;
     return Row( children: [
       const LanguageSwitch(),
+      const Gap(5),
         Tooltip(
           preferBelow: showTooltipBelow,
           message: 'darkModeSwitch'.tr,
@@ -72,7 +73,7 @@ class ExpandedTrailingActions extends StatelessWidget {
         ],
       ),
     );
-    return screenHeight > 740
+    return screenHeight > 650
         ? trailingActionsBody
         : SingleChildScrollView(child: trailingActionsBody);
   }
